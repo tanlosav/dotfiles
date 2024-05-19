@@ -24,18 +24,20 @@ keymap.set("n", "<M>k", "<C-w>k", { desc = "Swith split to the up" })
 -- keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 -- keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
--- -- scroll half page down and up 
--- vim.keymap.set('n', 'J', '<C-d>')
--- vim.keymap.set('n', 'K', '<C-b>')
+-- scroll half page down and up, keeping the cursor centered
+keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll downwards' })
+keymap.set('n', '<C-u>', '<C-b>zz', { desc = 'Scroll upwards' })
 
 -- Terminal mode
--- keymap.set("t", "<esc>",     "<C-\\><C-N>", opts)
--- keymap.set("t", "<C-Left>",  "<C-\\><C-N><C-w>h", opts)
--- keymap.set("t", "<C-Down>",  "<C-\\><C-N><C-w>j", opts)
--- keymap.set("t", "<C-Up>",    "<C-\\><C-N><C-w>k", opts)
--- keymap.set("t", "<C-Right>", "<C-\\><C-N><C-w>l", opts)
 keymap.set("t", "<esc>",     "<C-\\><C-N>", opts)
 keymap.set("t", "<C-H>",  "<C-\\><C-N><C-w>h", opts)
 keymap.set("t", "<C-J>",    "<C-\\><C-N><C-w>j", opts)
 keymap.set("t", "<C-K>",    "<C-\\><C-N><C-w>k", opts)
 keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l", opts)
+
+-- make U opposite to u (redo)
+keymap.set('n', 'U', '<C-r>', { desc = 'Redo' })
+
+-- word navigation in non-normal modes.
+keymap.set({ 'i', 'c' }, '<C-h>', '<C-Left>', { desc = 'Move word(s) backwards' })
+keymap.set({ 'i', 'c' }, '<C-l>', '<C-Right>', { desc = 'Move word(s) forwards' })

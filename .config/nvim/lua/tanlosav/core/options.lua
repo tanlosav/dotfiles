@@ -2,16 +2,25 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
 
+-- line numbers
 opt.relativenumber = false
 opt.number = true
+
+-- line wrapping
+opt.wrap = false
+
+-- soft-wrap text in insert mode (only visually) at the edge of the window
+opt.number = true -- optional - will help to visually verify that it's working
+opt.textwidth=0
+opt.wrapmargin=0
+opt.wrap = true
+opt.linebreak = true -- optional - breaks by word rather than character
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
-
-opt.wrap = false
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -38,9 +47,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- soft-wrap text in insert mode (only visually) at the edge of the window
-opt.number = true -- optional - will help to visually verify that it's working
-opt.textwidth=0
-opt.wrapmargin=0
-opt.wrap = true
-opt.linebreak = true -- optional - breaks by word rather than character
+-- Save undo history.
+opt.undofile = true
+
+-- Keep signcolumn on by default.
+opt.signcolumn = 'yes'
