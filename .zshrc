@@ -1,3 +1,9 @@
+# Delete duplicates first when HISTFILE size exceeds HISTSIZE.
+setopt hist_expire_dups_first
+
+# Ignore duplicated commands history list.
+setopt hist_ignore_dups
+
 export LANG=en_US.UTF-8
 
 export PATH="$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -24,5 +30,9 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-fast-syntax-highlighting
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 #source ~/.zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
