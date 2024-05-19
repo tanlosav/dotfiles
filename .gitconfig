@@ -1,0 +1,53 @@
+[init]
+	defaultBranch = main
+
+[user]
+	name = tanlosav
+	email = {ID}+{username}@users.noreply.github.com
+
+[i18n]
+    filesEncoding = utf-8
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[color "status"]
+    added = green
+    changed = red bold
+    untracked = magenta bold
+    unmerged = yellow
+
+[color "branch"]
+    remote = yellow
+
+[push]
+    default = simple
+
+[alias]
+    hist = log --pretty=format:'%Cred%h%Creset %Cgreen%ci%Creset %s%C(yellow)%d%Creset [%C(bold blue)<%an> (%ae)%Creset]' --graph --date=short
+    color-merge = "!f() { git merge $@ | egrep --color 'CONFLICT .*|$' ; }; f"
+
+# git-delta settings (https://github.com/dandavison/delta)
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
