@@ -5,7 +5,13 @@ return {
   opts = {
     options = {
       mode = "tabs",
-      separator_style = "slant",
     },
+  },
+  keys = {
+    -- Buffer navigation.
+    { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Previous buffer' },
+    { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
+    { '<leader>bc', '<cmd>BufferLinePickClose<cr>', desc = 'Select a buffer to close' },
+    { '<leader>bo', '<cmd>BufferLinePick<cr>', desc = 'Select a buffer to open' },
   },
 }
