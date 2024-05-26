@@ -51,7 +51,7 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    keymap.set("n", "<C-e>", "<cmd>Telescope oldfiles<cr>", { desc = "List recent files" })
+    -- keymap.set("n", "<C-e>", "<cmd>Telescope oldfiles<cr>", { desc = "List recent files" })
 
     require("which-key").register({
         f = {
