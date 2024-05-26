@@ -6,6 +6,7 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "folke/todo-comments.nvim",
+    "debugloop/telescope-undo.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -38,10 +39,14 @@ return {
         oldfiles = {
           cwd_only = true,
         }
+      },
+      extensions = {
+        undo = {},
       }
     })
 
     telescope.load_extension("fzf")
+    require("telescope").load_extension("undo")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -61,6 +66,7 @@ return {
           r = { "<cmd>Telescope registers<CR>", "Registers" },
           s = { "<cmd>Telescope spell_suggest<CR>", "Spelling suggestions" },
           t = { "<cmd>TodoTelescope<CR>", "Todo" },
+          u = { "<cmd>Telescope undo<cr>", "Undo" },
 
           g = {
             name = "Git",
