@@ -9,6 +9,7 @@
 --     vim.cmd("colorscheme catppuccin")
 --   end,
 -- }
+
 return {
   "folke/tokyonight.nvim",
   priority = 1000,
@@ -24,8 +25,8 @@ return {
     local border = "#547998"
 
     require("tokyonight").setup({
-      -- style = "night",
-      style = "day",
+      style = "night",
+      -- style = "day",
       -- on_colors = function(colors)
       --   colors.bg = bg
       --   colors.bg_dark = bg_dark

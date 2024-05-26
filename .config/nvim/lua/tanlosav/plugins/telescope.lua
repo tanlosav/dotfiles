@@ -46,23 +46,44 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    -- keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    -- keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    -- keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    -- keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-    -- add keymaps and groups for those keybindings using a leader key with which-key group
+    keymap.set("n", "<C-e>", "<cmd>Telescope oldfiles<cr>", { desc = "List recent files" })
+
     require("which-key").register({
-      f = {
-            name = "Telescope",
-            b = { "<cmd>Telescope buffers<CR>", "Lists open buffers in current neovim instance" },
-            r = { "<cmd>Telescope oldfiles<CR>", "List recent files" },
+        f = {
+          name = "Telescope",
+          b = { "<cmd>Telescope buffers<CR>", "Open buffers" },
+          f = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
+          h = { "<cmd>Telescope search_history<CR>", "Search history" },
+          j = { "<cmd>Telescope jumplist<CR>", "Jump list" },
+          k = { "<cmd>Telescope keymaps<CR>", "Keymappings" },
+          m = { "<cmd>Telescope marks<CR>", "Marks" },
+          o = { "<cmd>Telescope vim_options<CR>", "Vim options" },
+          r = { "<cmd>Telescope registers<CR>", "Registers" },
+          s = { "<cmd>Telescope spell_suggest<CR>", "Spelling suggestions" },
+          t = { "<cmd>TodoTelescope<CR>", "Todo" },
+
+          g = {
+            name = "Git",
+            h = { "<cmd>Telescope git_bcommits<CR>", "Buffer's history" },
+          },
+          l = {
+            name = "LSP",
+            c = { "<cmd>Telescope lsp_incoming_calls<CR>", "Calls" },
+            d = { "<cmd>Telescope lsp_definitions<CR>", "Definitions" },
+            e = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Diagnostics" },
+            i = { "<cmd>Telescope lsp_implementations<CR>", "Implementations" },
+            r = { "<cmd>Telescope lsp_references<CR>", "References" },
+            s = { "<cmd>Telescope lsp_document_symbols<CR>", "Symbols" },
+            t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type definition" },
+          },
+          s = {
+            name = "Grep",
             f = { "<cmd>Telescope find_files<CR>", "Fuzzy find files in cwd" },
             s = { "<cmd>Telescope live_grep<CR>", "Find string in cwd" },
             c = { "<cmd>Telescope grep_string<CR>", "Find string under cursor in cwd" },
-            t = { "<cmd>TodoTelescope<CR>", "Find todos" },
           },
-      }, 
+        },
+      },
       { prefix = "<leader>" }
     )
   end,
