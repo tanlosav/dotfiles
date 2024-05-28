@@ -14,7 +14,7 @@ return {
             t = {
                   name = "Terminal",
                   a = { "<cmd>ToggleTermToggleAll<CR>", "Toggle all terminals" },
-                  f = { "<cmd>ToggleTerm direction=float<CR>", "Toggle terminal in float mode" },
+                  t = { "<cmd>ToggleTerm direction=float<CR>", "Toggle terminal in float mode" },
                   h = { "<cmd>ToggleTerm direction=horizontal<CR>", "Toggle terminal in horizontal mode" },
                 },
             }, 
