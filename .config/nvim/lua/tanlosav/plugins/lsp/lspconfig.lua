@@ -68,6 +68,7 @@ return {
         require("which-key").register({
           l = {
                 name = "LSP",
+                h = {vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()), "Toggle inlay hints"},
               },
           }, 
           { prefix = "<leader>" }
