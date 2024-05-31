@@ -66,11 +66,11 @@ return {
               },
               outline = {
                 win_position = 'right',
-                win_width = 30,
+                win_width = 50,
                 auto_preview = true,
                 detail = true,
-                auto_close = true,
-                close_after_jump = true,
+                auto_close = false,
+                close_after_jump = false,
                 layout = 'normal',
                 max_height = 0.5,
                 left_width = 0.3,
@@ -94,19 +94,15 @@ return {
 
         require("which-key").register({
             l = {
-            --   s = {
-            --     name = "LSP Saga",
-                -- c = { "<cmd>Lspsaga incoming_calls<CR>", "Calls" },
                 d = { "<cmd>Lspsaga peek_definition<CR>", "Peek definition" },
                 l = { "<cmd>Lspsaga finder tyd+def+ref+imp<CR>", "Links" },
-                o = { "<cmd>Lspsaga outline<CR>", "Outline" },
+                s = { "<cmd>Lspsaga outline<CR>", "Document symbols" },
                 t = { "<cmd>Lspsaga peek_type_definition<CR>", "Type definition" },
                 g = {
                     name = "Go to",
                     d = { "<cmd>Lspsaga goto_definition<CR>", "Go to definition" },
                     t = { "<cmd>Lspsaga goto_type_definition<CR>", "Go to type definition" },
                 },
-            --   },
             },
           },
           { prefix = "<leader>" }
