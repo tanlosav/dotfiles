@@ -128,7 +128,7 @@ return {
 
       require("go").setup({
         tag_transform = "camelcase",
-        tag_options = "json=omitempty",
+        tag_options = "json=omitempty,yaml",
         run_in_floaterm = true,
         -- test_runner = "gotestsum",
         floaterm = {   -- position
