@@ -19,8 +19,6 @@ alias grep="rg"
 # use fd instead of find (https://github.com/sharkdp/fd)
 alias find="fd"
 
-alias astronvim='NVIM_APPNAME=astronvim nvim'
-alias joseannvim='NWIM_APP_NAME=joseannvim nvim'
 alias tmux='tmux new-session -A -s default'
 
 if type brew &>/dev/null; then
