@@ -6,7 +6,7 @@ setopt hist_ignore_dups
 
 export LANG=en_US.UTF-8
 
-export PATH="$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/bin:$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # use eza instead of ls (https://github.com/eza-community/eza)
 alias ls='eza'
