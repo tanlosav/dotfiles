@@ -75,18 +75,15 @@ return {
     keymap.set('n', 'h', api.node.open.horizontal, {desc = 'Open in horizontal split'})
     keymap.set('n', 'v', api.node.open.vertical, {desc = 'Open in vertical split'})
 
-    -- add keymaps and groups for those keybindings using a leader key with which-key group
-    require("which-key").register({
-      e = {
-            name = "Nvim Tree",
-            e = { "<cmd>NvimTreeFocus<CR>", "Open the tree if it is closed, and then focus on the tree" },
-            t = { "<cmd>NvimTreeToggle<CR>", "Toggle file explorer" },
-            f = { "<cmd>NvimTreeFindFileToggle<CR>", "Toggle file explorer on current file" },
-            c = { "<cmd>NvimTreeCollapse<CR>", "Collapse file explorer" },
-            r = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
-          },
-      }, 
-      { prefix = "<leader>" }
+    require("which-key").add(
+      {
+        { "<leader>e", group = "Nvim Tree" },
+        { "<leader>ee", "<cmd>NvimTreeFocus<CR>", desc = "Open the tree if it is closed, and then focus on the tree" },
+        { "<leader>ec", "<cmd>NvimTreeCollapse<CR>", desc = "Collapse file explorer" },
+        { "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", desc = "Toggle file explorer on current file" },
+        { "<leader>er", "<cmd>NvimTreeRefresh<CR>", desc = "Refresh file explorer" },
+        { "<leader>et", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
+      }
     )
 
   end

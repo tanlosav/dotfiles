@@ -141,28 +141,22 @@ return {
         },
       })
 
-      require("which-key").register({
-          g = {
-                name = "GO",
-                o = { "<cmd>GoPkgOutline<CR>", "Outline" },
-                s = {
-                  name = "Struct",
-                  f = { "<cmd>GoFillStruct<CR>", "Fill struct" },
-                  a = { "<cmd>GoAddTag json,yaml<CR>", "Add tags" },
-                  r = { "<cmd>GoRmTag json,yaml<CR>", "Remove tags" },
-                },
-                t = {
-                  name = "Test",
-                  a = { "<cmd>GoTestSum<CR>", "Run go test ./..." },
-                  f = { "<cmd>GoTestFunc -F<CR>", "Run test for current func" },
-                  F = { "<cmd>GoTestFile -F<CR>", "Run test for current file" },
-                  p = { "<cmd>GoTestPkg -F<CR>", "Run test for current package" },
-                  r = { "<cmd>GoTestFunc -s -F<CR>", "Select the test function to run" },
-                },
-              },
-          }, 
-          { prefix = "<leader>" }
-        )
+      require("which-key").add(
+        {
+          { "<leader>g", group = "GO" },
+          { "<leader>go", "<cmd>GoPkgOutline<CR>", desc = "Outline" },
+          { "<leader>gs", group = "Struct" },
+          { "<leader>gsa", "<cmd>GoAddTag json,yaml<CR>", desc = "Add tags" },
+          { "<leader>gsf", "<cmd>GoFillStruct<CR>", desc = "Fill struct" },
+          { "<leader>gsr", "<cmd>GoRmTag json,yaml<CR>", desc = "Remove tags" },
+          { "<leader>gt", group = "Test" },
+          { "<leader>gta", "<cmd>GoTestSum<CR>", desc = "Run go test ./..." },
+          { "<leader>gtf", "<cmd>GoTestFunc -F<CR>", desc = "Run test for current func" },
+          { "<leader>gtF", "<cmd>GoTestFile -F<CR>", desc = "Run test for current file" },
+          { "<leader>gtp", "<cmd>GoTestPkg -F<CR>", desc = "Run test for current package" },
+          { "<leader>gtr", "<cmd>GoTestFunc -s -F<CR>", desc = "Select the test function to run" },
+        }
+      )
     end,
     event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},

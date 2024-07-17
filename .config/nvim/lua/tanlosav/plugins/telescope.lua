@@ -53,43 +53,34 @@ return {
 
     keymap.set('n', '<leader><leader>', "<cmd>Telescope oldfiles<CR>", {desc = 'Recent files'})
 
-    require("which-key").register({
-        f = {
-          name = "Telescope",
-          b = { "<cmd>Telescope buffers<CR>", "Open buffers" },
-          f = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
-          g = {
-            name = "Git",
-            h = { "<cmd>Telescope git_bcommits<CR>", "Buffer's history" },
-          },
-          j = { "<cmd>Telescope jumplist<CR>", "Jump list" },
-          k = { "<cmd>Telescope keymaps<CR>", "Keymappings" },
-          l = {
-            name = "LSP",
-            c = { "<cmd>Telescope lsp_incoming_calls<CR>", "Calls" },
-            d = { "<cmd>Telescope lsp_definitions<CR>", "Definitions" },
-            e = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Diagnostics" },
-            i = { "<cmd>Telescope lsp_implementations<CR>", "Implementations" },
-            r = { "<cmd>Telescope lsp_references<CR>", "References" },
-            s = { "<cmd>Telescope lsp_document_symbols<CR>", "Symbols" },
-            t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type definition" },
-          },
-          m = { "<cmd>Telescope marks<CR>", "Marks" },
-          o = { "<cmd>Telescope vim_options<CR>", "Vim options" },
-          r = { "<cmd>Telescope registers<CR>", "Registers" },
-          t = { "<cmd>TodoTelescope<CR>", "Todo" },
-          u = { "<cmd>Telescope undo<cr>", "Undo" },
-        },
-        s = {
-          name = "Search",
-          c = { "<cmd>Telescope grep_string<CR>", "Find string under cursor in cwd" },
-          f = { "<cmd>Telescope find_files<CR>", "Fuzzy find files in cwd" },
-          h = { "<cmd>Telescope search_history<CR>", "Search history" },
-          s = { "<cmd>Telescope live_grep<CR>", "Find string in cwd" },
-        },
-
-      },
-      { prefix = "<leader>" }
+    require("which-key").add(
+      {
+        { "<leader>f", group = "Telescope" },
+        { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Open buffers" },
+        { "<leader>ff", "<cmd>Telescope oldfiles<CR>", desc = "Recent files" },
+        { "<leader>fg", group = "Git" },
+        { "<leader>fgh", "<cmd>Telescope git_bcommits<CR>", desc = "Buffer's history" },
+        { "<leader>fj", "<cmd>Telescope jumplist<CR>", desc = "Jump list" },
+        { "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Keymappings" },
+        { "<leader>fl", group = "LSP" },
+        { "<leader>flc", "<cmd>Telescope lsp_incoming_calls<CR>", desc = "Calls" },
+        { "<leader>fld", "<cmd>Telescope lsp_definitions<CR>", desc = "Definitions" },
+        { "<leader>fle", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Diagnostics" },
+        { "<leader>fli", "<cmd>Telescope lsp_implementations<CR>", desc = "Implementations" },
+        { "<leader>flr", "<cmd>Telescope lsp_references<CR>", desc = "References" },
+        { "<leader>fls", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Symbols" },
+        { "<leader>flt", "<cmd>Telescope lsp_type_definitions<CR>", desc = "Type definition" },
+        { "<leader>fm", "<cmd>Telescope marks<CR>", desc = "Marks" },
+        { "<leader>fo", "<cmd>Telescope vim_options<CR>", desc = "Vim options" },
+        { "<leader>fr", "<cmd>Telescope registers<CR>", desc = "Registers" },
+        { "<leader>ft", "<cmd>TodoTelescope<CR>", desc = "Todo" },
+        { "<leader>fu", "<cmd>Telescope undo<cr>", desc = "Undo" },
+        { "<leader>s", group = "Search" },
+        { "<leader>sc", "<cmd>Telescope grep_string<CR>", desc = "Find string under cursor in cwd" },
+        { "<leader>sf", "<cmd>Telescope find_files<CR>", desc = "Fuzzy find files in cwd" },
+        { "<leader>sh", "<cmd>Telescope search_history<CR>", desc = "Search history" },
+        { "<leader>ss", "<cmd>Telescope live_grep<CR>", desc = "Find string in cwd" },
+      }
     )
   end,
 }
