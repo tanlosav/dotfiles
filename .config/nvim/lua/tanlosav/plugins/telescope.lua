@@ -53,44 +53,6 @@ return {
 
     keymap.set('n', '<leader><leader>', "<cmd>Telescope oldfiles<CR>", {desc = 'Recent files'})
 
-    -- require("which-key").register({
-    --     f = {
-    --       name = "Telescope",
-    --       b = { "<cmd>Telescope buffers<CR>", "Open buffers" },
-    --       f = { "<cmd>Telescope oldfiles<CR>", "Recent files" },
-    --       g = {
-    --         name = "Git",
-    --         h = { "<cmd>Telescope git_bcommits<CR>", "Buffer's history" },
-    --       },
-    --       j = { "<cmd>Telescope jumplist<CR>", "Jump list" },
-    --       k = { "<cmd>Telescope keymaps<CR>", "Keymappings" },
-    --       l = {
-    --         name = "LSP",
-    --         c = { "<cmd>Telescope lsp_incoming_calls<CR>", "Calls" },
-    --         d = { "<cmd>Telescope lsp_definitions<CR>", "Definitions" },
-    --         e = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Diagnostics" },
-    --         i = { "<cmd>Telescope lsp_implementations<CR>", "Implementations" },
-    --         r = { "<cmd>Telescope lsp_references<CR>", "References" },
-    --         s = { "<cmd>Telescope lsp_document_symbols<CR>", "Symbols" },
-    --         t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type definition" },
-    --       },
-    --       m = { "<cmd>Telescope marks<CR>", "Marks" },
-    --       o = { "<cmd>Telescope vim_options<CR>", "Vim options" },
-    --       r = { "<cmd>Telescope registers<CR>", "Registers" },
-    --       t = { "<cmd>TodoTelescope<CR>", "Todo" },
-    --       u = { "<cmd>Telescope undo<cr>", "Undo" },
-    --     },
-    --     s = {
-    --       name = "Search",
-    --       c = { "<cmd>Telescope grep_string<CR>", "Find string under cursor in cwd" },
-    --       f = { "<cmd>Telescope find_files<CR>", "Fuzzy find files in cwd" },
-    --       h = { "<cmd>Telescope search_history<CR>", "Search history" },
-    --       s = { "<cmd>Telescope live_grep<CR>", "Find string in cwd" },
-    --     },
-
-    --   },
-    --   { prefix = "<leader>" }
-    -- )
     require("which-key").add(
       {
         { "<leader>f", group = "Telescope" },

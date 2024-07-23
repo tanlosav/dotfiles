@@ -6,8 +6,11 @@ return {
     vim.o.timeoutlen = 500
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    preset = "helix",
+    delay = 500,
+    win = {
+      no_overlap = false,
+      height = { min = 4, max = 25 },
+    },
   },
 }

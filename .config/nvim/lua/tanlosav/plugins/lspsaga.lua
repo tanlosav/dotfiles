@@ -92,21 +92,6 @@ return {
 
         vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { desc = "Show documentation" })
 
-        -- require("which-key").register({
-        --     l = {
-        --         d = { "<cmd>Lspsaga peek_definition<CR>", "Peek definition" },
-        --         l = { "<cmd>Lspsaga finder tyd+def+ref+imp<CR>", "Links" },
-        --         s = { "<cmd>Lspsaga outline<CR>", "Document symbols" },
-        --         t = { "<cmd>Lspsaga peek_type_definition<CR>", "Type definition" },
-        --         g = {
-        --             name = "Go to",
-        --             d = { "<cmd>Lspsaga goto_definition<CR>", "Go to definition" },
-        --             t = { "<cmd>Lspsaga goto_type_definition<CR>", "Go to type definition" },
-        --         },
-        --     },
-        --   },
-        --   { prefix = "<leader>" }
-        -- )
       require("which-key").add(
         {
           { "<leader>l", group = "LSP" },

@@ -141,28 +141,6 @@ return {
         },
       })
 
-      -- require("which-key").register({
-      --     g = {
-      --           name = "GO",
-      --           o = { "<cmd>GoPkgOutline<CR>", "Outline" },
-      --           s = {
-      --             name = "Struct",
-      --             f = { "<cmd>GoFillStruct<CR>", "Fill struct" },
-      --             a = { "<cmd>GoAddTag json,yaml<CR>", "Add tags" },
-      --             r = { "<cmd>GoRmTag json,yaml<CR>", "Remove tags" },
-      --           },
-      --           t = {
-      --             name = "Test",
-      --             a = { "<cmd>GoTestSum<CR>", "Run go test ./..." },
-      --             f = { "<cmd>GoTestFunc -F<CR>", "Run test for current func" },
-      --             F = { "<cmd>GoTestFile -F<CR>", "Run test for current file" },
-      --             p = { "<cmd>GoTestPkg -F<CR>", "Run test for current package" },
-      --             r = { "<cmd>GoTestFunc -s -F<CR>", "Select the test function to run" },
-      --           },
-      --         },
-      --     }, 
-      --     { prefix = "<leader>" }
-      --   )
       require("which-key").add(
         {
           { "<leader>g", group = "GO" },

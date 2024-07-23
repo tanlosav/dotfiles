@@ -173,23 +173,6 @@ return {
               }
         })
 
-        -- require("which-key").register({
-        --     r = {
-        --           name = "Run",
-        --           t = {
-        --             name = "Test",
-        --             a = { function() require('neotest').run.run({vim.fn.getcwd(), extra_args = {"-race"}}) end, "Run all files" },
-        --             f = { function() require("neotest").run.run() end, "Run current function" },
-        --             F = { function() require("neotest").run.run(vim.fn.expand("%")) end, "Run current file" },
-        --             o = { function() require("neotest").output.open({ enter = true, auto_close = true }) end, "Show output" },
-        --             O = {  function() require("neotest").output_panel.toggle() end, "Toggle output panel" },
-        --             s = { function() require("neotest").summary.toggle() end, "Toggle summary" },
-        --             t = { function() require("neotest").run.stop() end, "Terminate test" },
-        --           },
-        --         },
-        --     }, 
-        --     { prefix = "<leader>" }
-        --   )
       require("which-key").add(
         {
           { "<leader>r", group = "Run" },
@@ -204,13 +187,4 @@ return {
         }
       )
     end,
-    -- keys = {
-    --     { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
-    --     -- { "<leader>tT", function() require("neotest").run.run(vim.loop.cwd()) end, desc = "Run All Test Files" },
-    --     -- { "<leader>tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
-    --     { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle Summary" },
-    --     -- { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show Output" },
-    --     -- { "<leader>tO", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
-    --     -- { "<leader>tS", function() require("neotest").run.stop() end, desc = "Stop" },
-    -- },
 }
