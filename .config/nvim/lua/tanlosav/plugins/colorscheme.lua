@@ -1,3 +1,15 @@
+return {
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
+  config = function()
+    require("catppuccin").setup({
+      style = "frappe"
+    })
+    vim.cmd.colorscheme('catppuccin')
+  end,
+}
+
 -- return {
 --   "catppuccin/nvim",
 --   name = "catppuccin",
@@ -10,16 +22,16 @@
 --   end,
 -- }
 
-return {
-  'catppuccin/nvim',
-  lazy = false,
-  priority = 1000,
-  config = function()
-      vim.g.edge_enable_italic = true
-      vim.o.background = "light"
-      vim.cmd.colorscheme('catppuccin')
-  end
-}
+-- return {
+--   'catppuccin/nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--       vim.g.edge_enable_italic = true
+--       vim.o.background = "light"
+--       vim.cmd.colorscheme('catppuccin')
+--   end
+-- }
 
 -- return {
 --   "folke/tokyonight.nvim",
