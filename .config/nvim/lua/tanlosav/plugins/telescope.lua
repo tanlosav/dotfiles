@@ -90,7 +90,8 @@ return {
         { "<leader>q", group = "Quickfix" },
         { "<leader>qq", "<cmd>Telescope quickfix<CR>", desc = "Quickfix list" },
         { "<leader>qh", "<cmd>Telescope quickfixhistory<CR>", desc = "Quickfix history" },
-        { "<leader>ql", "<cmd>copen<CR>", desc = "Quickfix window" },
+        { "<leader>qw", "<cmd>copen<CR>", desc = "Quickfix window" },
+        { "<leader>ql", "<cmd>Telescope loclist<CR>", desc = "Location list" },
         --
         { "<leader>fc", "<cmd>Telescope colorscheme<CR>", desc = "Choose colorscheme" },
         { "<leader>fj", "<cmd>Telescope jumplist<CR>", desc = "Jump list" },
