@@ -10,16 +10,6 @@ return {
             -- direction = "float",
         })
 
-        -- require("which-key").register({
-        --     t = {
-        --           name = "Terminal",
-        --           a = { "<cmd>ToggleTermToggleAll<CR>", "Toggle all terminals" },
-        --           t = { "<cmd>ToggleTerm direction=float<CR>", "Toggle terminal in float mode" },
-        --           h = { "<cmd>ToggleTerm direction=horizontal<CR>", "Toggle terminal in horizontal mode" },
-        --         },
-        --     }, 
-        --     { prefix = "<leader>" }
-        --   )
         require("which-key").add(
             {
                 { "<leader>t", group = "Terminal" },

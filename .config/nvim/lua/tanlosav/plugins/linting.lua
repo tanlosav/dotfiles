@@ -9,7 +9,14 @@ return {
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
+      -- golangcilint
+      -- htmlhint
+      -- sqlfluff
+      -- yamllint
     }
+
+    -- local ns = require("lint").get_namespace("my_linter_name")
+    -- vim.diagnostic.config({ virtual_text = true }, ns)
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
