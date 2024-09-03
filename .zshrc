@@ -6,7 +6,9 @@ setopt hist_ignore_dups
 
 export LANG=en_US.UTF-8
 
+# PATH
 export PATH="$HOME/bin:$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 # use eza instead of ls (https://github.com/eza-community/eza)
 alias ls='eza'
@@ -27,6 +29,9 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# AIDER
+export OPENROUTER_API_KEY=`cat $HOME/.openrouter-api.key`
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

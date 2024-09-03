@@ -11,8 +11,8 @@ opt.wrap = false
 
 -- soft-wrap text in insert mode (only visually) at the edge of the window
 opt.number = true -- optional - will help to visually verify that it's working
-opt.textwidth=0
-opt.wrapmargin=0
+opt.textwidth = 0
+opt.wrapmargin = 0
 opt.wrap = true
 opt.linebreak = true -- optional - breaks by word rather than character
 
@@ -51,5 +51,7 @@ opt.swapfile = false
 -- Save undo history.
 opt.undofile = true
 
--- Keep signcolumn on by default.
-opt.signcolumn = 'yes'
+-- spell checking (use <z=> for spell suggestions)
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+
