@@ -52,3 +52,7 @@ opt.undofile = true
 
 -- Keep signcolumn on by default.
 opt.signcolumn = 'yes'
+
+-- spell checking (use <z=> for spell suggestions)
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true

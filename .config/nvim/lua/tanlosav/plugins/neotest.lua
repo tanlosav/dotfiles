@@ -162,29 +162,42 @@ return {
         }, neotest_ns)
 
         require('neotest').setup({
-            adapters = {
-                require("neotest-go")({
-                  experimental = {
-                    test_table = true,
-                  },
-                  recursive_run = true,
-                  args = { "-count=1", "-timeout=60s" }
-                })
-              }
-        })
+          adapters = {
+              require("neotest-go")({
+                experimental = {
+                  test_table = true,
+                },
+                recursive_run = true,
+                args = { "-v", "-race", "-count=1", "-timeout=60s" }
+              })
+            },
+            status = { virtual_text = true },
+            output = { open_on_run = true },
+            quickfix = {
+              open = function()
+                if LazyVim.has("trouble.nvim") then
+                  require("trouble").open({ mode = "quickfix", focus = false })
+                else
+                  vim.cmd("copen")
+                end
+              end,
+              enabled = true,
+            },
+      })
 
-        require("which-key").add(
-          {
-            { "<leader>r", group = "Run" },
-            { "<leader>rt", group = "Test" },
-            { "<leader>rta", function() require('neotest').run.run({vim.fn.getcwd(), extra_args = {"-race"}}) end, desc = "Run all files" },
-            { "<leader>rtf", function() require("neotest").run.run() end, desc = "Run current function" },
-            { "<leader>rtF", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current file" },
-            { "<leader>rto", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show output" },
-            { "<leader>rtO", function() require("neotest").output_panel.toggle() end, desc = "Toggle output panel" },
-            { "<leader>rts", function() require("neotest").summary.toggle() end, desc = "Toggle summary" },
-            { "<leader>rtt", function() require("neotest").run.stop() end, desc = "Terminate test" },
-          }
-        )
+    require("which-key").add(
+      {
+        { "<leader>r", group = "Run" },
+        { "<leader>rt", group = "Test" },
+        { "<leader>rta", function() require('neotest').run.run({vim.fn.getcwd(), extra_args = {"-race"}}) end, desc = "Run all files" },
+        { "<leader>rtf", function() require("neotest").run.run() end, desc = "Run current function" },
+        { "<leader>rtf", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug current function" },
+        { "<leader>rtF", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current file" },
+        { "<leader>rto", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show output" },
+        { "<leader>rtO", function() require("neotest").output_panel.toggle() end, desc = "Toggle output panel" },
+        { "<leader>rts", function() require("neotest").summary.toggle() end, desc = "Toggle summary" },
+        { "<leader>rtt", function() require("neotest").run.stop() end, desc = "Terminate test" },
+      }
+    )
     end,
 }
