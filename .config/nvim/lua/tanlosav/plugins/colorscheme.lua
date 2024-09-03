@@ -1,36 +1,14 @@
--- return {
---     "catppuccin/nvim",
---     name = "catppuccin",
---     priority = 1000,
---     config = function()
---         require("catppuccin").setup({
---             flavour = "frappe"
---         })
---         vim.cmd("colorscheme catppuccin")
---     end,
--- }
-
 return {
-    'catppuccin/nvim',
-    lazy = false,
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
-        vim.g.edge_enable_italic = true
-        vim.o.background = "light"
-        vim.cmd.colorscheme('catppuccin')
-    end
+        require("catppuccin").setup({
+            flavour = "frappe"
+        })
+        vim.cmd("colorscheme catppuccin")
+    end,
 }
-
--- return {
---     'sainnhe/edge',
---     lazy = false,
---     priority = 1000,
---     config = function()
---         vim.g.edge_enable_italic = true
---         vim.o.background = "light"
---         vim.cmd.colorscheme('edge')
---     end
--- }
 
 -- return {
 --     'tokyonight.nvim',

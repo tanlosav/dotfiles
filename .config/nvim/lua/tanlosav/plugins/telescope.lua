@@ -80,6 +80,7 @@ return {
         { "<leader>sf", "<cmd>Telescope find_files<CR>", desc = "Fuzzy find files in cwd" },
         { "<leader>sh", "<cmd>Telescope search_history<CR>", desc = "Search history" },
         { "<leader>ss", "<cmd>Telescope live_grep<CR>", desc = "Find string in cwd" },
+        { "<leader>fc", "<cmd>Telescope colorscheme<CR>", desc = "Schoose colorscheme" },
       }
     )
   end,
