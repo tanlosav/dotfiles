@@ -73,6 +73,7 @@ return {
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Open buffers" },
         { "<leader>fg", group = "Git" },
         { "<leader>fgh", "<cmd>Telescope git_bcommits<CR>", desc = "Buffer's history" },
+        { "<leader>fgs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>fl", group = "LSP" },
         { "<leader>flc", "<cmd>Telescope lsp_incoming_calls<CR>", desc = "Calls" },
         { "<leader>fld", "<cmd>Telescope lsp_definitions<CR>", desc = "Definitions" },
