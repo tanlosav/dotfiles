@@ -5,7 +5,7 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-go"
+      "fredrikaverpil/neotest-golang"
     },
     config = function()
         -- default configuration
@@ -163,12 +163,15 @@ return {
 
         require('neotest').setup({
             adapters = {
-                require("neotest-go")({
-                  experimental = {
-                    test_table = true,
+                require("neotest-golang")({
+                  go_test_args = {
+                    "-v",
+                    "-race",
+                    "-count=1",
+                    -- "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
                   },
-                  recursive_run = true,
-                  args = { "-v", "-race", "-count=1", "-timeout=60s" }
+                  testify_enabled = true,
+                  -- dap_go_opts = {}
                 })
               },
               status = { virtual_text = true },
@@ -191,7 +194,7 @@ return {
           { "<leader>rt", group = "Test" },
           { "<leader>rta", function() require('neotest').run.run({vim.fn.getcwd(), extra_args = {"-race"}}) end, desc = "Run all files" },
           { "<leader>rtf", function() require("neotest").run.run() end, desc = "Run current function" },
-          { "<leader>rtf", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug current function" },
+        --   { "<leader>rtf", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug current function" },
           { "<leader>rtF", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current file" },
           { "<leader>rto", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show output" },
           { "<leader>rtO", function() require("neotest").output_panel.toggle() end, desc = "Toggle output panel" },

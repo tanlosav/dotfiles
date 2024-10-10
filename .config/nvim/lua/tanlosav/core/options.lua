@@ -48,10 +48,19 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- Save undo history.
+-- save undo history
 opt.undofile = true
 
 -- spell checking (use <z=> for spell suggestions)
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
+-- fuzzy completion
+if vim.fn.has('nvim-0.11') == 1 then
+    vim.opt.completeopt:append('fuzzy') -- Use fuzzy matching for built-in completion
+end
+
+-- enable auto save
+vim.api.nvim_create_autocmd(
+    { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, { desc = "autosave", pattern = "*", command = "silent! update" }
+)
