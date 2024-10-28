@@ -45,7 +45,7 @@ return {
             --   },
             typehierarchy = {
                 layout = 'float',
-                left_width = 0.2,
+                left_width = 0.5,
                 keys = {
                   edit = '<CR>',
                   vsplit = 'v',
@@ -70,10 +70,11 @@ return {
                 auto_preview = true,
                 detail = true,
                 auto_close = false,
-                close_after_jump = false,
-                layout = 'normal',
+                close_after_jump = true,
+                -- layout = 'normal',
+                layout = 'float',
                 max_height = 0.5,
-                left_width = 0.3,
+                left_width = 0.5,
                 keys = {
                   toggle_or_jump = '<CR>',
                   quit = 'q',
