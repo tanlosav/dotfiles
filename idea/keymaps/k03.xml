@@ -1,0 +1,186 @@
+<keymap version="1" name="alexey.saltanov k03" parent="Default for GNOME">
+  <action id="$Delete">
+    <keyboard-shortcut first-keystroke="delete" />
+    <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
+  <action id="$Redo">
+    <keyboard-shortcut first-keystroke="shift ctrl z" />
+    <keyboard-shortcut first-keystroke="shift alt back_space" />
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
+    <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
+  <action id="Adtui.ZoomInAction">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="Adtui.ZoomOutAction">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="Android.Designer.AutoArrange" />
+  <action id="Arrangement.Alias.Rule.Add" />
+  <action id="Arrangement.Rule.Add" />
+  <action id="Back">
+    <keyboard-shortcut first-keystroke="shift alt left" />
+    <mouse-shortcut keystroke="button4" />
+    <keyboard-shortcut first-keystroke="ctrl open_bracket" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="ctrl f4" />
+    <keyboard-shortcut first-keystroke="ctrl w" />
+  </action>
+  <action id="CollapseAll">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="ctrl subtract" />
+  </action>
+  <action id="CollapseBlock" />
+  <action id="CollapseExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="CollapseRegion">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="CollapseSelection" />
+  <action id="CommentByBlockComment">
+    <keyboard-shortcut first-keystroke="shift ctrl slash" />
+    <keyboard-shortcut first-keystroke="shift ctrl divide" />
+    <keyboard-shortcut first-keystroke="shift ctrl period" />
+  </action>
+  <action id="CompareTwoFiles" />
+  <action id="DSM.ZoomIn">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="shift f9" />
+    <keyboard-shortcut first-keystroke="alt d" />
+  </action>
+  <action id="Diff.ShowDiff" />
+  <action id="Editor Delete">
+    <keyboard-shortcut first-keystroke="ctrl y" />
+  </action>
+  <action id="Editor Redo">
+    <keyboard-shortcut first-keystroke="shift ctrl i" />
+  </action>
+  <action id="Editor Undo">
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="EditorCodeBlockEnd" />
+  <action id="EditorCodeBlockStart" />
+  <action id="EditorDeleteLine" />
+  <action id="EditorSelectWord" />
+  <action id="EditorTextEndWithSelection" />
+  <action id="EditorTextStartWithSelection" />
+  <action id="ExpandAll">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="ctrl add" />
+  </action>
+  <action id="ExpandExpandableComponent">
+    <keyboard-shortcut first-keystroke="shift enter" />
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="ExpandRegion" />
+  <action id="ExportToTextFile" />
+  <action id="ExternalSystem.CollapseAll">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="ExternalSystem.ExpandAll">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="FileChooser.GotoDesktop" />
+  <action id="FileChooser.NewFolder">
+    <keyboard-shortcut first-keystroke="ctrl n" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" />
+    <keyboard-shortcut first-keystroke="ctrl g" />
+  </action>
+  <action id="Forward">
+    <keyboard-shortcut first-keystroke="shift alt right" />
+    <mouse-shortcut keystroke="button5" />
+    <keyboard-shortcut first-keystroke="ctrl close_bracket" />
+  </action>
+  <action id="GotoClass">
+    <keyboard-shortcut first-keystroke="ctrl n" />
+    <keyboard-shortcut first-keystroke="ctrl o" />
+  </action>
+  <action id="GotoLine">
+    <keyboard-shortcut first-keystroke="ctrl l" />
+  </action>
+  <action id="GotoRow" />
+  <action id="GuiDesigner.Duplicate" />
+  <action id="Images.Editor.ZoomIn">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="Images.Editor.ZoomOut">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="Markdown.Styling.CreateLink" />
+  <action id="Maven.CollapseAll">
+    <keyboard-shortcut first-keystroke="ctrl minus" />
+  </action>
+  <action id="Maven.ExpandAll">
+    <keyboard-shortcut first-keystroke="ctrl equals" />
+  </action>
+  <action id="MoveStatementDown">
+    <keyboard-shortcut first-keystroke="shift ctrl down" />
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="MoveStatementUp">
+    <keyboard-shortcut first-keystroke="shift ctrl up" />
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
+  <action id="NewElement" />
+  <action id="NextOccurence" />
+  <action id="OverrideMethods" />
+  <action id="PreviousOccurence" />
+  <action id="QuickImplementations" />
+  <action id="QuickTypeDefinition">
+    <keyboard-shortcut first-keystroke="alt k" />
+  </action>
+  <action id="Refactorings.QuickListPopupAction">
+    <keyboard-shortcut first-keystroke="shift ctrl alt t" />
+    <keyboard-shortcut first-keystroke="ctrl t" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="f9" />
+    <keyboard-shortcut first-keystroke="alt c" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="shift f10" />
+    <keyboard-shortcut first-keystroke="alt r" />
+  </action>
+  <action id="RunDashboard.CopyConfiguration" />
+  <action id="SendEOF" />
+  <action id="ServiceView.AddService" />
+  <action id="ShelveChanges.UnshelveWithDialog" />
+  <action id="ShowSettings">
+    <keyboard-shortcut first-keystroke="ctrl alt s" />
+    <keyboard-shortcut first-keystroke="ctrl comma" />
+  </action>
+  <action id="SmartSelect" />
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="f7" />
+    <keyboard-shortcut first-keystroke="alt i" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="f8" />
+    <keyboard-shortcut first-keystroke="alt o" />
+  </action>
+  <action id="Stop">
+    <keyboard-shortcut first-keystroke="ctrl f2" />
+    <keyboard-shortcut first-keystroke="alt t" />
+  </action>
+  <action id="TableResult.GrowSelection" />
+  <action id="Terminal.ClearBuffer" />
+  <action id="Tree-selectLastExtendSelection" />
+  <action id="Uml.NewElement" />
+  <action id="UsageFiltering.ReadAccess" />
+  <action id="UsageFiltering.WriteAccess" />
+  <action id="Vcs.Log.FocusTextFilter" />
+  <action id="Vcs.UpdateProject" />
+  <action id="XDebugger.CopyWatch" />
+  <action id="openAssertEqualsDiff" />
+</keymap>
