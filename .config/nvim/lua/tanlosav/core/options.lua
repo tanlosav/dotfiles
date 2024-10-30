@@ -11,8 +11,8 @@ opt.wrap = false
 
 -- soft-wrap text in insert mode (only visually) at the edge of the window
 opt.number = true -- optional - will help to visually verify that it's working
-opt.textwidth=0
-opt.wrapmargin=0
+opt.textwidth = 0
+opt.wrapmargin = 0
 opt.wrap = true
 opt.linebreak = true -- optional - breaks by word rather than character
 
@@ -32,6 +32,7 @@ opt.cursorline = true
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+-- opt.background = "light" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- backspace
@@ -47,12 +48,19 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- Save undo history.
+-- save undo history
 opt.undofile = true
-
--- Keep signcolumn on by default.
-opt.signcolumn = 'yes'
 
 -- spell checking (use <z=> for spell suggestions)
 vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+
+-- fuzzy completion
+if vim.fn.has('nvim-0.11') == 1 then
+    vim.opt.completeopt:append('fuzzy') -- Use fuzzy matching for built-in completion
+end
+
+-- enable auto save
+vim.api.nvim_create_autocmd(
+    { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, { desc = "autosave", pattern = "*", command = "silent! update" }
+)
