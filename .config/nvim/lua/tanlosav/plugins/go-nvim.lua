@@ -130,7 +130,7 @@ return {
         tag_transform = "camelcase",
         tag_options = "json=omitempty,yaml",
         run_in_floaterm = true,
-        test_runner = "gotestsum",
+        test_runner = "go", -- one of {`go`,  `dlv`, `ginkgo`, `gotestsum`}
         floaterm = {   -- position
           posititon = 'bottom', -- one of {`top`, `bottom`, `left`, `right`, `center`, `auto`}
           width = 0.45, -- width of float window if not auto
