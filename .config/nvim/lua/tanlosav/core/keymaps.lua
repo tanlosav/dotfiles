@@ -43,7 +43,7 @@ keymap.set('n', 'U', '<C-r>', { desc = 'Redo' })
 keymap.set({ 'i', 'c' }, '<C-h>', '<C-Left>', { desc = 'Move word(s) backwards' })
 keymap.set({ 'i', 'c' }, '<C-l>', '<C-Right>', { desc = 'Move word(s) forwards' })
 
--- P=prevent deleting from also copying
+-- prevent deleting from also copying
 vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
 
