@@ -64,3 +64,14 @@ end
 vim.api.nvim_create_autocmd(
     { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, { desc = "autosave", pattern = "*", command = "silent! update" }
 )
+
+-- enable fold
+-- za - toggle the fold
+-- zA - toggle the fold recursively
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 4
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
