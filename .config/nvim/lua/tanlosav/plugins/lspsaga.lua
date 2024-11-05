@@ -96,13 +96,18 @@ return {
       require("which-key").add(
         {
           { "<leader>l", group = "LSP" },
+          { "<leader>la", "<cmd>Lspsaga code_action<CR>", desc = "Code action" },
           { "<leader>ld", "<cmd>Lspsaga peek_definition<CR>", desc = "Peek definition" },
           { "<leader>lg", group = "Go to" },
           { "<leader>lgd", "<cmd>Lspsaga goto_definition<CR>", desc = "Go to definition" },
           { "<leader>lgt", "<cmd>Lspsaga goto_type_definition<CR>", desc = "Go to type definition" },
+          { "<leader>li", "<cmd>Lspsaga finder imp<CR>", desc = "Implementations" },
           { "<leader>ll", "<cmd>Lspsaga finder tyd+def+ref+imp<CR>", desc = "Links" },
           { "<leader>ls", "<cmd>Lspsaga outline<CR>", desc = "Document symbols" },
           { "<leader>lt", "<cmd>Lspsaga peek_type_definition<CR>", desc = "Type definition" },
+          { "<leader>lp", group = "Diagnostics" },
+          { "<leader>lpb", "<cmd>Lspsaga show_buf_diagnostics ++float<CR>", desc = "Buffer diagnostics" },
+          { "<leader>lpw", "<cmd>Lspsaga show_workspace_diagnostics ++float<CR>", desc = "Workspace diagnostics" },
         }      
       )
     end,
