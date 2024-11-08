@@ -55,7 +55,7 @@ return {
         theme = my_lualine_theme,
       },
       sections = {
-
+        lualine_b = { 'spelunk' },
         lualine_c = {
           {
             'filename',
