@@ -7,7 +7,7 @@ setopt hist_ignore_dups
 export LANG=en_US.UTF-8
 
 # PATH
-export PATH="$HOME/bin:$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$HOME/bin:$HOME/go/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 # use eza instead of ls (https://github.com/eza-community/eza)
@@ -35,6 +35,15 @@ export OPENROUTER_API_KEY=`cat $HOME/.openrouter-api.key`
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 
 # zsh-fast-syntax-highlighting
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
