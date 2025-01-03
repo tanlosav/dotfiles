@@ -27,11 +27,11 @@ return {
 
         require("which-key").add(
         {
-          { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics" },
-          { "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
-          { "<leader>[d]", vim.diagnostic.goto_prev, desc = "Go to previous diagnostic" },
-          { "<leader>]d", vim.diagnostic.goto_next, desc = "Go to next diagnostic" },
-          { "gR", "<cmd>Telescope lsp_references<CR>", desc = "References" },
+          -- { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics" },
+          -- { "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics" },
+          -- { "<leader>[d]", vim.diagnostic.goto_prev, desc = "Go to previous diagnostic" },
+          -- { "<leader>]d", vim.diagnostic.goto_next, desc = "Go to next diagnostic" },
+          -- { "gR", "<cmd>Telescope lsp_references<CR>", desc = "References" },
           { "<leader>l", group = "LSP" },
           { "<leader>lr", vim.lsp.buf.rename, desc = "Smart rename" },
           { "<leader>lx", ":LspRestart<CR>", desc = "Restart LSP" },

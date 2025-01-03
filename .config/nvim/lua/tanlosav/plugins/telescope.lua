@@ -91,8 +91,6 @@ return {
         { "<leader>qh", "<cmd>Telescope quickfixhistory<CR>", desc = "Quickfix history" },
         { "<leader>qw", "<cmd>copen<CR>", desc = "Quickfix window" },
         { "<leader>ql", "<cmd>Telescope loclist<CR>", desc = "Location list" },
-        { "<leader>ft", group = "Transform" },
-        { "<leader>fts", "<cmd>Telescope spell_suggest<CR>", desc = "Lists spelling suggestions" },
         --
         { "<leader>fc", "<cmd>Telescope colorscheme<CR>", desc = "Choose colorscheme" },
         { "<leader>fj", "<cmd>Telescope jumplist<CR>", desc = "Jump list" },
