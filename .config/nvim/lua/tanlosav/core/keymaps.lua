@@ -11,7 +11,7 @@ keymap.set('n', '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearc
 keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "Close current split" })
+keymap.set("n", "<leader>ww", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- switch between splits (windows)
 keymap.set("n", "<C>h", "<C-w>h", { desc = "Swith split to the left" })
@@ -30,10 +30,10 @@ keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll downwards' })
 keymap.set('n', '<C-u>', '<C-b>zz', { desc = 'Scroll upwards' })
 
 -- terminal mode
-keymap.set("t", "<esc>",     "<C-\\><C-N>", opts)
-keymap.set("t", "<C-H>",  "<C-\\><C-N><C-w>h", opts)
-keymap.set("t", "<C-J>",    "<C-\\><C-N><C-w>j", opts)
-keymap.set("t", "<C-K>",    "<C-\\><C-N><C-w>k", opts)
+keymap.set("t", "<esc>", "<C-\\><C-N>", opts)
+keymap.set("t", "<C-H>", "<C-\\><C-N><C-w>h", opts)
+keymap.set("t", "<C-J>", "<C-\\><C-N><C-w>j", opts)
+keymap.set("t", "<C-K>", "<C-\\><C-N><C-w>k", opts)
 keymap.set("t", "<C-L>", "<C-\\><C-N><C-w>l", opts)
 
 -- make U opposite to u (redo)
@@ -44,7 +44,7 @@ keymap.set({ 'i', 'c' }, '<C-h>', '<C-Left>', { desc = 'Move word(s) backwards' 
 keymap.set({ 'i', 'c' }, '<C-l>', '<C-Right>', { desc = 'Move word(s) forwards' })
 
 -- prevent deleting from also copying
-vim.keymap.set({'n', 'v'}, 'd', '"_d', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, 'd', '"_d', { noremap = true })
 vim.keymap.set('n', 'dd', '"_dd', { noremap = true })
 
 -- selection

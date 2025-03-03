@@ -1,11 +1,11 @@
 return {
     "nvim-neotest/neotest",
     dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "fredrikaverpil/neotest-golang"
+        "nvim-neotest/nvim-nio",
+        "nvim-lua/plenary.nvim",
+        "antoinemadec/FixCursorHold.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "fredrikaverpil/neotest-golang"
     },
     config = function()
         -- default configuration
@@ -154,9 +154,9 @@ return {
         vim.diagnostic.config({
             virtual_text = {
                 format = function(diagnostic)
-                local message =
-                    diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-                return message
+                    local message =
+                        diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+                    return message
                 end,
             },
         }, neotest_ns)
@@ -164,43 +164,46 @@ return {
         require('neotest').setup({
             adapters = {
                 require("neotest-golang")({
-                  go_test_args = {
-                    "-v",
-                    "-race",
-                    "-count=1",
-                    -- "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
-                  },
-                  testify_enabled = true,
-                  -- dap_go_opts = {}
+                    go_test_args = {
+                        "-v",
+                        "-race",
+                        "-count=1",
+                        "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+                    },
+                    testify_enabled = true,
+                    -- dap_go_opts = {}
                 })
-              },
-              status = { virtual_text = true },
-              output = { open_on_run = true },
-              -- quickfix = {
-              --   open = function()
-              --     if LazyVim.has("trouble.nvim") then
-              --       require("trouble").open({ mode = "quickfix", focus = false })
-              --     else
-              --       vim.cmd("copen")
-              --     end
-              --   end,
-              --   enabled = true,
-              -- },
+            },
+            status = { virtual_text = true },
+            output = { open_on_run = true },
+            -- quickfix = {
+            --   open = function()
+            --     if LazyVim.has("trouble.nvim") then
+            --       require("trouble").open({ mode = "quickfix", focus = false })
+            --     else
+            --       vim.cmd("copen")
+            --     end
+            --   end,
+            --   enabled = true,
+            -- },
         })
 
-      require("which-key").add(
-        {
-          { "<leader>r", group = "Run" },
-          { "<leader>rt", group = "Test" },
-          { "<leader>rta", function() require('neotest').run.run({vim.fn.getcwd(), extra_args = {"-race"}}) end, desc = "Run all files" },
-          { "<leader>rtf", function() require("neotest").run.run() end, desc = "Run current function" },
-        --   { "<leader>rtf", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug current function" },
-          { "<leader>rtF", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run current file" },
-          { "<leader>rto", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Show output" },
-          { "<leader>rtO", function() require("neotest").output_panel.toggle() end, desc = "Toggle output panel" },
-          { "<leader>rts", function() require("neotest").summary.toggle() end, desc = "Toggle summary" },
-          { "<leader>rtt", function() require("neotest").run.stop() end, desc = "Terminate test" },
-        }
-      )
+        require("which-key").add(
+            {
+                { "<leader>r",   group = "Run" },
+                { "<leader>rt",  group = "Test" },
+                { "<leader>rta", function() require('neotest').run.run({ vim.fn.getcwd(), extra_args = { "-race" } }) end, desc = "Run all files" },
+                { "<leader>rtf", function() require("neotest").run.run() end,                                              desc = "Run current function" },
+                --   { "<leader>rtf", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug current function" },
+                { "<leader>rtF", function() require("neotest").run.run(vim.fn.expand("%")) end,                            desc = "Run current file" },
+                { "<leader>rto", function() require("neotest").output.open({ enter = true, auto_close = true }) end,       desc = "Show output" },
+                { "<leader>rtO", function() require("neotest").output_panel.toggle() end,                                  desc = "Toggle output panel" },
+                { "<leader>rts", function() require("neotest").summary.toggle() end,                                       desc = "Toggle summary" },
+                { "<leader>rtt", function() require("neotest").run.stop() end,                                             desc = "Terminate test" },
+                -- "andythigpen/nvim-coverage"
+                { "<leader>rtc", "<cmd>Coverage<cr>",                                                                      desc = "Coverage in gutter" },
+                { "<leader>rtC", "<cmd>CoverageLoad<cr><cmd>CoverageSummary<cr>",                                          desc = "Coverage summary" },
+            }
+        )
     end,
 }
