@@ -22,6 +22,8 @@ return {
 
         require("which-key").add(
             {
+                { "<leader>bg",  group = "Git actions" },
+                { "<leader>bgl", function() Snacks.picker.git_log_file() end, desc = "Git log file" },
                 { "<leader>fJ", function() picker.jumps() end,                                                              desc = "Jump list (snacks)" },
                 { "<leader>l",  group = "LSP" },
                 { "<leader>lL", function() picker.lsp_references({ layout = { preset = "vscode", preview = "main" } }) end, desc = "Links (snacks)" },

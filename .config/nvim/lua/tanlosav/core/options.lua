@@ -17,14 +17,14 @@ opt.wrap = true
 opt.linebreak = true -- optional - breaks by word rather than character
 
 -- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
+opt.tabstop = 2       -- 2 spaces for tabs (prettier default)
+opt.shiftwidth = 2    -- 2 spaces for indent width
+opt.expandtab = true  -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
 
 opt.cursorline = true
 
@@ -33,7 +33,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 -- opt.background = "light" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.signcolumn = "yes"  -- show sign column so that text doesn't shift
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
@@ -62,7 +62,8 @@ end
 
 -- enable auto save
 vim.api.nvim_create_autocmd(
-    { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" }, { desc = "autosave", pattern = "*", command = "silent! update" }
+    { "FocusLost", "ModeChanged", "TextChanged", "BufEnter" },
+    { desc = "autosave", pattern = "*", command = "silent! update" }
 )
 
 -- enable fold
@@ -75,3 +76,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
 vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
+
+-- `vim.o.sessionoptions` should contain 'localoptions' to make sure filetype and highlighting work correctly after a session is restored.
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
