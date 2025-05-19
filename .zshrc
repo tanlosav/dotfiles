@@ -30,6 +30,10 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# home/end keys
+#bindkey "^[[D" beginning-of-line # cmd+←
+#bindkey "^[[C" end-of-line       # cmd+→
+
 # AIDER
 export OPENROUTER_API_KEY=`cat $HOME/.openrouter-api.key`
 
@@ -43,7 +47,6 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
-
 
 # zsh-fast-syntax-highlighting
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
