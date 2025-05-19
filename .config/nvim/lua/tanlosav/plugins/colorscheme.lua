@@ -1,13 +1,35 @@
+-- return {
+--   "catppuccin/nvim",
+--   name = "catppuccin",
+--   priority = 1000,
+--   config = function()
+--     require("catppuccin").setup({
+--       style = "frappe"
+--     })
+--     vim.cmd.colorscheme('catppuccin')
+--   end,
+-- }
+
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
-  priority = 1000,
-  config = function()
-    require("catppuccin").setup({
-      style = "frappe"
-    })
-    vim.cmd.colorscheme('catppuccin')
-  end,
+    "Shatur/neovim-ayu",
+    name = "ayu",
+    priority = 1000,
+    config = function()
+        local colors = require('ayu.colors')
+        colors.generate() -- Pass `true` to enable mirage
+
+        require('ayu').setup({
+            mirage = false,  -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+            terminal = true, -- Set to `false` to let terminal manage its own colors.
+            overrides = {
+                CursorLineNr = { fg = colors.accent, bg = colors.line },
+                LineNr = { fg = colors.gutter_normal },
+                Visual = { bg = colors.selection_bg },
+                FoldColumn = { bg = colors.panel_bg }
+            },
+        })
+        vim.cmd.colorscheme('ayu')
+    end,
 }
 
 -- return {
