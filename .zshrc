@@ -35,7 +35,7 @@ fi
 #bindkey "^[[C" end-of-line       # cmd+→
 
 # AIDER
-export OPENROUTER_API_KEY=`cat $HOME/.openrouter-api.key`
+#export OPENROUTER_API_KEY=`cat $HOME/.openrouter-api.key`
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
