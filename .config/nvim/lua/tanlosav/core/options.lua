@@ -76,3 +76,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
 vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
+
+-- `vim.o.sessionoptions` should contain 'localoptions' to make sure filetype and highlighting work correctly after a session is restored.
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
