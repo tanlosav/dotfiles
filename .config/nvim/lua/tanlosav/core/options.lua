@@ -56,9 +56,9 @@ vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 
 -- fuzzy completion
-if vim.fn.has('nvim-0.11') == 1 then
-    vim.opt.completeopt:append('fuzzy') -- Use fuzzy matching for built-in completion
-end
+-- if vim.fn.has('nvim-0.11') == 1 then
+--     vim.opt.completeopt:append('fuzzy') -- Use fuzzy matching for built-in completion
+-- end
 
 -- enable auto save
 vim.api.nvim_create_autocmd(
