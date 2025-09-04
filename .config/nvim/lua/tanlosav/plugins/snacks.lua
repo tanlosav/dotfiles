@@ -6,10 +6,22 @@ return {
     opts = {
         bigfile = { enabled = true },
         -- dashboard = { enabled = true },
-        -- explorer = { enabled = true },
+        explorer = { enabled = true },
         indent = { enabled = true },
         -- input = { enabled = true },
-        picker = { enabled = true },
+        picker = {
+            layout = { preset = "float" },
+            sources = {
+                explorer = {
+                    layout = { preset = "vscode" },
+                    follow = true,
+                    focus = "input",
+                    filtered = { gitignored = true, dotfiles = false },
+                    on_confirm = "open",
+                    auto_close = true,
+                },
+            },
+        },
         notifier = { enabled = true },
         quickfile = { enabled = true },
         scope = { enabled = true },
@@ -30,6 +42,22 @@ return {
                 { "<leader>ls",  function() picker.lsp_symbols({ layout = { preset = "vscode", preview = "main" } }) end,    desc = "Document symbols (snacks)" },
                 { "<leader>s",   group = "Search" },
                 { "<leader>sF",  function() picker.smart() end,                                                              desc = "Find files (snacks)" },
+                {
+                    "<leader>ep",
+                    function()
+                        picker.explorer({
+                            cwd = vim.fn.expand("%:p:h"),
+                            reveal = vim.api.nvim_buf_get_name(0),
+                            layout = { preset = "vscode" },
+                            follow = true,
+                            focus = "input",
+                            filtered = { gitignored = true, dotfiles = false },
+                            on_confirm = "open",
+                            auto_close = true,
+                        })
+                    end,
+                    desc = "Explorer (float)",
+                },
             }
         )
     end
