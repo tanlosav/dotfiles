@@ -1,4 +1,4 @@
-return { 
+return {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
@@ -29,18 +29,19 @@ return {
             { "<leader>db", function() dap.toggle_breakpoint() end, desc = "Toggle breakpoint" },
             { "<leader>dB", function() dap.clear_breakpoints() end, desc = "Clear all breakpoints" },
             {
-                "<leader>dc",
+                "<leader>ds",
                 function()
                     dap.continue()
                     dapui.toggle({})
                 end,
                 desc = "Launch debug session"
             },
-            { "<leader>dn", function() dap.step_over() end, desc = "Step over" },
+            { "<leader>do", function() dap.step_over() end, desc = "Step over" },
             { "<leader>di", function() dap.step_into() end, desc = "Step into" },
-            { "<leader>do", function() dap.step_out() end,  desc = "Step out" },
+            { "<leader>dO", function() dap.step_out() end,  desc = "Step out" },
+            { "<leader>dc", function() dap.continue() end,  desc = "Continue" },
             {
-                "<leader>dC",
+                "<leader>dS",
                 function()
                     dapui.toggle({})
                     dap.terminate()

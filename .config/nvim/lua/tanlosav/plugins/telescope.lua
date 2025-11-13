@@ -84,7 +84,7 @@ return {
                 { "<leader>fls", function() require("telescope.builtin").lsp_document_symbols({ symbols = { "method", "function", "struct", "constant" } }) end, desc = "Symbols" },
                 { "<leader>flt", "<cmd>Telescope lsp_type_definitions<CR>",                                                                                      desc = "Type definition" },
                 { "<leader>s",   group = "Search" },
-                { "<leader>sf",  "<cmd>Telescope find_files<CR>",                                                                                                desc = "Find files in cwd" },
+                { "<leader>sF",  "<cmd>Telescope find_files<CR>",                                                                                                desc = "Find files in cwd" },
                 { "<leader>sh",  "<cmd>Telescope search_history<CR>",                                                                                            desc = "Search history" },
                 { "<leader>ss",  "<cmd>Telescope current_buffer_fuzzy_find<CR>",                                                                                 desc = "Find string in buffer" },
                 { "<leader>sS",  "<cmd>Telescope live_grep<CR>",                                                                                                 desc = "Find string in cwd" },

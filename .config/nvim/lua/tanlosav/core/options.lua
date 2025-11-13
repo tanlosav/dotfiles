@@ -6,11 +6,26 @@ local opt = vim.opt
 opt.relativenumber = false
 opt.number = true
 
+local function should_show_numbers(buf, ft, bt)
+    if bt == "terminal" or bt == "nofile" or bt == "prompt" then return false end
+    if ft == "help" or ft == "starter" or ft == "neo-tree" or ft == "oil" then return false end
+    return true
+end
+
+vim.api.nvim_create_autocmd({ "BufWinEnter", "FileType" }, {
+    callback = function(args)
+        local ft = vim.bo[args.buf].filetype
+        local bt = vim.bo[args.buf].buftype
+        if should_show_numbers(args.buf, ft, bt) then
+            vim.wo.number = true
+        end
+    end,
+})
+
 -- line wrapping
 opt.wrap = false
 
 -- soft-wrap text in insert mode (only visually) at the edge of the window
-opt.number = true -- optional - will help to visually verify that it's working
 opt.textwidth = 0
 opt.wrapmargin = 0
 opt.wrap = true
@@ -79,3 +94,13 @@ vim.opt.foldtext = ""
 
 -- `vim.o.sessionoptions` should contain 'localoptions' to make sure filetype and highlighting work correctly after a session is restored.
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- SnacksPickerPathHidden = {
+--   default = true,
+--   link = "NonText"
+-- }
+-- NonText = {
+--   fg = "#1E222A"
+-- }
+-- vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#FF0000" })
+-- vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { link = "Text" })
