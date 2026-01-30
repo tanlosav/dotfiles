@@ -39,7 +39,33 @@ return {
       --
       -- " Compare two revisions for current file
       -- :CodeDiff file main HEAD
-      
+
+      -- File Comparison Mode (Compare two arbitrary files side-by-side):
+      -- :CodeDiff file file_a.txt file_b.txt
+
+      -- Directory Comparison Mode (Compare two directories without git):
+      -- " Auto-detect directories
+      -- :CodeDiff ~/project-v1 ~/project-v2
+      --
+      -- " Explicit dir subcommand
+      -- :CodeDiff dir /path/to/dir1 /path/to/dir2
+
+      -- Git Merge Tool (Use CodeDiff as your git merge tool for resolving conflicts);
+      -- git config --global merge.tool codediff
+      -- git config --global mergetool.codediff.cmd 'nvim "$MERGED" -c "CodeDiff merge \"$MERGED\""'
+
+      -- Git Diff Tool
+      --
+      -- Use CodeDiff as your git diff tool for viewing changes:
+      -- git config --global diff.tool codediff
+      -- git config --global difftool.codediff.cmd 'nvim "$LOCAL" "$REMOTE" +"CodeDiff file $LOCAL $REMOTE"'
+      --
+      -- Then use git difftool to view diffs:
+      -- git difftool                      # View all uncommitted changes
+      -- git difftool HEAD~2 HEAD          # Compare two commits
+      -- git difftool main feature-branch  # Compare branches
+      -- git difftool -y                   # Skip confirmation prompts
+
       -- Highlight configuration
       highlights = {
         -- Line-level: accepts highlight group names or hex colors (e.g., "#2ea043")
