@@ -1,35 +1,23 @@
 -- return {
---   "catppuccin/nvim",
---   name = "catppuccin",
---   priority = 1000,
---   config = function()
---     require("catppuccin").setup({
---       style = "frappe"
---     })
---     vim.cmd.colorscheme('catppuccin')
---   end,
+--     "Shatur/neovim-ayu",
+--     name = "ayu",
+--     priority = 1000,
+--     config = function()
+--         local colors = require('ayu.colors')
+--         colors.generate() -- Pass `true` to enable mirage
+
+--         require('ayu').setup({
+--             mirage = false,  -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+--             terminal = true, -- Set to `false` to let terminal manage its own colors.
+--             overrides = {
+--                 CursorLineNr = { fg = colors.accent, bg = colors.line },
+--                 LineNr = { fg = colors.gutter_normal },
+--                 Visual = { bg = colors.selection_bg },
+--             },
+--         })
+--         vim.cmd.colorscheme('ayu')
+--     end,
 -- }
-
-return {
-    "Shatur/neovim-ayu",
-    name = "ayu",
-    priority = 1000,
-    config = function()
-        local colors = require('ayu.colors')
-        colors.generate() -- Pass `true` to enable mirage
-
-        require('ayu').setup({
-            mirage = false,  -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
-            terminal = true, -- Set to `false` to let terminal manage its own colors.
-            overrides = {
-                CursorLineNr = { fg = colors.accent, bg = colors.line },
-                LineNr = { fg = colors.gutter_normal },
-                Visual = { bg = colors.selection_bg },
-            },
-        })
-        vim.cmd.colorscheme('ayu')
-    end,
-}
 
 -- return {
 --   "catppuccin/nvim",
@@ -37,22 +25,25 @@ return {
 --   priority = 1000,
 --   config = function()
 --     require("catppuccin").setup({
---       style = "latte"
+--       style = "mocha"
 --     })
 --     vim.cmd.colorscheme('catppuccin')
 --   end,
 -- }
 
--- return {
---   'catppuccin/nvim',
---   lazy = false,
---   priority = 1000,
+-- return { 
+--   "EdenEast/nightfox.nvim",
 --   config = function()
---       vim.g.edge_enable_italic = true
---       vim.o.background = "light"
---       vim.cmd.colorscheme('catppuccin')
+--     vim.cmd("colorscheme duskfox")
 --   end
 -- }
+
+return { 
+  "rebelot/kanagawa.nvim",
+  config = function()
+    vim.cmd("colorscheme kanagawa-wave")
+  end
+}
 
 -- return {
 --   "folke/tokyonight.nvim",
