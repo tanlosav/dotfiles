@@ -15,7 +15,8 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         lspconfig.sourcekit.setup({
-            cmd = (vim.fn.has("mac") == 1) and { "xcrun", "sourcekit-lsp" } or { "sourcekit-lsp" },
+            -- cmd = (vim.fn.has("mac") == 1) and { "xcrun", "sourcekit-lsp" } or { "sourcekit-lsp" },
+            cmd = { "/usr/bin/sourcekit-lsp" },
             root_dir = util.root_pattern("Package.swift", ".git"),
             capabilities = capabilities,
         })
